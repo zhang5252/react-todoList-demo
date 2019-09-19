@@ -5,7 +5,7 @@ class TodoTabs extends Component {
     super(props);
 
     this.state = {
-      states: ["all", "active", "completed"]
+      tabs: ["all", "active", "completed"]
     }
   }
   render() {
@@ -13,8 +13,8 @@ class TodoTabs extends Component {
       <div className="helper">
         <span className="left">2 items left</span>
         <span className="tabs">
-          {this.state.states.map(item =>
-            <span>{item}</span>
+          {this.state.tabs.map((item, index) =>
+            <span key={index}>{item}</span>
           )}
         </span>
         <span className="clear" > Clear Completed</span >
