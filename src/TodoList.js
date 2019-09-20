@@ -4,6 +4,18 @@ import classNames from 'classnames';
 
 
 class TodoList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      filter: 'all',
+    }
+    this.toggleFilter = this.toggleFilter.bind(this);
+  }
+
+  toggleFilter(item) {
+    this.setState({ filter: item })
+  }
+
   render() {
     const list = this.props.items.map((item, index) => {
       return (
@@ -20,7 +32,12 @@ class TodoList extends Component {
     return (
       <div>
         {list}
-        <TodoTabs />
+        <TodoTabs
+          items={this.props.items}
+          toggleFilter={this.toggleFilter}
+          ontoggle={this.toggleFilter}
+          filter={this.state.filter}
+        />
       </div>
 
     )

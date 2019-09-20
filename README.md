@@ -1,4 +1,4 @@
-# React todoLisst Demo
+# React todoList Demo
 
 - [ ] 背景切换
 - [x] 添加任务
@@ -6,3 +6,4 @@
 - [x] 删除任务
 - [ ] 标签
 - [ ] 备注
+- [ ] 添加组件滚动条

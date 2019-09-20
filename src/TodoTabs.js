@@ -5,16 +5,24 @@ class TodoTabs extends Component {
     super(props);
 
     this.state = {
-      tabs: ["all", "active", "completed"]
+      tabs: ["all", "active", "completed"],
     }
   }
   render() {
     return (
       <div className="helper">
-        <span className="left">2 items left</span>
+        <span className="left">
+          {this.props.items.filter(item => !item.done).length} left
+        </span>
         <span className="tabs">
-          {this.state.tabs.map((item, index) =>
-            <span key={index}>{item}</span>
+          {this.state.tabs.map((item) =>
+            <span
+              className={this.props.filter === item ? 'actived' : ''}
+              key={item}
+              onClick={() => this.props.toggleFilter(item)}
+            >
+              {item}
+            </span>
           )}
         </span>
         <span className="clear" > Clear Completed</span >
