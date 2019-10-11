@@ -11,7 +11,7 @@ class TodoTabs extends Component {
   render() {
     return (
       <div className="helper">
-        <span className="left">
+        <span className="left" style={{color:'#f50057'}}>
           {this.props.items.filter(item => !item.done).length} left
         </span>
         <span className="tabs">

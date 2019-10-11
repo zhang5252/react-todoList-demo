@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoTabs from './TodoTabs';
 import classNames from 'classnames';
+import Checkbox from '@material-ui/core/Checkbox'
 
 
 class TodoList extends Component {
@@ -68,7 +69,11 @@ class Item extends Component {
     )
     return (
       <div className={isDone}>
-        <input className='toggle' onClick={this.doneClick} type="checkbox" />
+        <Checkbox
+          checked={this.props.done}
+          onChange={this.doneClick}
+          className='toggle'
+        />
         <label>{this.props.text}</label>
         <button className='destory' onClick={this.deleteClick}></button>
       </div>

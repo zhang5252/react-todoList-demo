@@ -8,6 +8,7 @@ class App extends Component {
   onRef = (ref) => {
     this.background = ref
   }
+
   render() {
     return (
       <div className='App'>
