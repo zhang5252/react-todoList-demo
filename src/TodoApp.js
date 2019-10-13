@@ -14,6 +14,7 @@ class TodoApp extends Component {
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
     this.doneItem = this.doneItem.bind(this);
+    this.clearCompletedItems = this.clearCompletedItems.bind(this);
   }
 
   addItem(item) {
@@ -37,6 +38,12 @@ class TodoApp extends Component {
     }));
   }
 
+  clearCompletedItems() {
+    this.setState((state) => ({
+      items:this.state.items.filter(item => !item.done)
+    }))
+  }
+
   doneItem(index) {
     const items = this.state.items;
     const todo = items[index];
@@ -57,6 +64,7 @@ class TodoApp extends Component {
           items={this.state.items}
           deleteClick={this.deleteItem}
           doneClick={this.doneItem}
+          clearCompletedItems={this.clearCompletedItems}
         />
       </div>
     )

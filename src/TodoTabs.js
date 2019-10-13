@@ -7,11 +7,17 @@ class TodoTabs extends Component {
     this.state = {
       tabs: ["all", "active", "completed"],
     }
+    this.clearCompleted = this.clearCompleted.bind(this);
   }
+
+  clearCompleted() {
+    this.props.clearCompletedItems();
+  }
+
   render() {
     return (
       <div className="helper">
-        <span className="left" style={{color:'#f50057'}}>
+        <span className="left" style={{ color: '#f50057' }}>
           {this.props.items.filter(item => !item.done).length} left
         </span>
         <span className="tabs">
@@ -25,7 +31,7 @@ class TodoTabs extends Component {
             </span>
           )}
         </span>
-        <span className="clear" > Clear Completed</span >
+        <span className="clear" onClick={this.clearCompleted}> Clear Completed</span >
       </div >
     )
   }

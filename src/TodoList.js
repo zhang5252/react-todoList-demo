@@ -38,6 +38,7 @@ class TodoList extends Component {
           toggleFilter={this.toggleFilter}
           ontoggle={this.toggleFilter}
           filter={this.state.filter}
+          clearCompletedItems={this.props.clearCompletedItems}
         />
       </div>
 
