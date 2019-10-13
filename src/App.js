@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import TodoApp from './TodoApp';
+import TodoApp from './todoApp/TodoApp';
 import Header from './Header';
 import Footer from './Footer';
 

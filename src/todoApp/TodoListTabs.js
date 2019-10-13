@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TodoTabs extends Component {
+class TodoListTabs extends Component {
   constructor(props) {
     super(props);
 
@@ -37,4 +37,4 @@ class TodoTabs extends Component {
   }
 }
 
-export default TodoTabs;
+export default TodoListTabs;

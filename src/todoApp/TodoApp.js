@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
-
 class TodoApp extends Component {
   constructor(props) {
     super(props);
@@ -31,16 +30,14 @@ class TodoApp extends Component {
 
   //todo:解构方式改写
   deleteItem(index) {
-    this.state.items.splice(index, 1);
-
     this.setState((state) => ({
-      items: state.items
+      items: state.items.splice(index,1)
     }));
   }
 
   clearCompletedItems() {
     this.setState((state) => ({
-      items:this.state.items.filter(item => !item.done)
+      items: state.items.filter(item => !item.done)
     }))
   }
 
