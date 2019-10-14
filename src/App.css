@@ -38,6 +38,11 @@ body {
   overflow-y: auto;
 }
 
+.wrapper .todoListItem {
+  overflow-y: scroll;
+  max-height: 300px;
+}
+
 .cover {
   position: absolute;
   left: 0;
@@ -140,11 +145,16 @@ body {
 }
 
 .footer {
-  margin-top: 200px;
   text-align: center;
   color: #f50057;
   font-size: 10px;
   text-shadow: 0 0.1px 0;
+  position: fixed;
+  bottom: 10px;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .helper {

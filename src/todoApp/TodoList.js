@@ -18,7 +18,7 @@ class TodoList extends Component {
 
   filteredTodos() {
     if (this.state.filter === 'all') {
-        return this.props.items
+      return this.props.items
     }
     const completed = this.state.filter === 'completed'
     return this.props.items.filter(item => item.done === completed)
@@ -39,7 +39,9 @@ class TodoList extends Component {
     })
     return (
       <div>
-        {list}
+        <div className='todoListItem'>
+          {list}
+        </div>
         <TodoListTabs
           items={this.props.items}
           toggleFilter={this.toggleFilter}
