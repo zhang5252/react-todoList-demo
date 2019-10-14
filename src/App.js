@@ -35,10 +35,9 @@ class Background extends Component {
     }
   }
   onChange = () => {
-    let index = this.state.imageNum + 1
-    if (index > 3) {
-      index = 1
-    }
+    let index = this.state.imageNum + 1 > 3
+      ? 1 :
+      this.state.imageNum + 1;
     this.setState({
       imageNum: index
     })
