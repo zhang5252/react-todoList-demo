@@ -28,10 +28,10 @@ class TodoApp extends Component {
     }));
   }
 
-  //todo:解构方式改写
   deleteItem(index) {
+    this.state.items.splice(index, 1)
     this.setState((state) => ({
-      items: state.items.splice(index,1)
+      items: state.items
     }));
   }
 

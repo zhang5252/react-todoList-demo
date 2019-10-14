@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from "@material-ui/core/Button"
 
 class TodoListTabs extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class TodoListTabs extends Component {
             </span>
           )}
         </span>
-        <span className="clear" onClick={this.clearCompleted}> Clear Completed</span >
+        <Button size="small" color="secondary" className="clear" onClick={this.clearCompleted}> Clear Completed</Button >
       </div >
     )
   }

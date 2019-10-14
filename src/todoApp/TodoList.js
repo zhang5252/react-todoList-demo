@@ -16,8 +16,16 @@ class TodoList extends Component {
     this.setState({ filter: item })
   }
 
+  filteredTodos() {
+    if (this.state.filter === 'all') {
+        return this.props.items
+    }
+    const completed = this.state.filter === 'completed'
+    return this.props.items.filter(item => item.done === completed)
+  }
+
   render() {
-    const list = this.props.items.map((item, index) => {
+    const list = this.filteredTodos().map((item, index) => {
       return (
         <TodoListItem
           key={item.id}
